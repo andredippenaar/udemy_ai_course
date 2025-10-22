@@ -1,6 +1,40 @@
 """
 Notebook Helper - Use the Learning Companion Agent directly within Jupyter notebooks
 This module provides simple functions to get help while you're learning.
+
+====================
+HOW TO USE THIS FILE
+====================
+
+1. In any Jupyter notebook, add this import at the top:
+
+    from notebook_helper import explain, experiments, teach
+
+2. Write your code in a cell and run it (Shift+Enter)
+
+3. In the NEXT cell, run one of these commands:
+
+    explain()       # Get a clear explanation of what the previous cell does
+    experiments()   # Get hands-on experiments to try
+    teach()         # Get BOTH explanation + experiments (recommended!)
+
+4. Learn by doing! Try the suggested experiments in new cells.
+
+====================
+EXAMPLE USAGE
+====================
+
+Cell 1:
+    from notebook_helper import explain, teach
+    from openai import OpenAI
+
+Cell 2:
+    openai = OpenAI()
+
+Cell 3:
+    teach()  # This will explain Cell 2 and suggest experiments!
+
+====================
 """
 
 from learning_agent import LearningAgent

@@ -2,6 +2,45 @@
 Learning Companion Agent - Helps students understand notebook concepts through:
 1. Concept Explanation - Identifies and explains key learning objectives
 2. Code Modification Suggestions - Proposes experiments to deepen understanding
+
+====================
+HOW TO IMPORT THIS
+====================
+
+This is the CORE agent file. Most users should import from notebook_helper.py instead:
+
+    from notebook_helper import explain, experiments, teach
+
+However, if you want to use the agent programmatically, you can import directly:
+
+    from learning_agent import LearningAgent
+
+    # Create an agent instance
+    agent = LearningAgent()
+
+    # Analyze a specific cell in a notebook file
+    result = agent.analyze_cell('1_lab1.ipynb', cell_index=10)
+
+    # Get just the explanation
+    print(result['explanation'])
+
+    # Get just the experiments
+    print(result['experiments'])
+
+====================
+COMMAND LINE USAGE
+====================
+
+You can also run this from the command line:
+
+    python learning_agent.py <cell_number> <notebook_path>
+
+Example:
+    python learning_agent.py 10 1_lab1.ipynb
+
+This will analyze cell 10 from 1_lab1.ipynb and display the full teaching session.
+
+====================
 """
 
 import json
